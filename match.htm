@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="=ie=edge">
+        <title>Astro Love</title>
+        <link rel="stylesheet" href="./css/mainPage.css">
+    </head>
+    <body>
+        <div id="confirm" > <p style="text-align:center; color:#d880d1;">Знак зодиака - это вставляем из инфы пользователя</p>
+             <p style="text-align:center; color:#d880d1;">Тип отношений:""</p>
+    <p style="text-align:center; color:#d880d1;">...%</p>
+            <img src="./photos/IMG_7105.PNG" />
+            <table class="table-bordered">
+        <tbody>
+            <td style="width: 33%; text-align: center;">
+                <div><buttonnew onclick="confirmYes()">Да</buttonnew ></div>
+            </td>
+            <td style="width: 33%;  text-align: center; ">
+                <div><buttonnew  onclick="confirmNo()">Нет</buttonnew >  </div>
+            </td>
+        </tbody>
+    </table>
+               </div>
+    <div id="username" hidden><p style="text-align:center; color:#d880d1;">Ссылка на соцсеть</p></div>
+        <div id="continue" hidden><p style="text-align:center; color:#d880d1;">Поищем еще! Продолжаем поиски</p></div>
+           <div class="bottom-nav">
+ <table class="table-bordered">
+ <tbody>
+<td style="width: 33%; text-align: center; "><strong><span style="font-size: 15pt;"><a href="profile.htm" ><button id="profile">Анкета</button></a></span></strong></td>
+<td style="width: 33%; ; text-align: center; "><strong><span style="font-size: 15pt;"><a href="match.htm"><button id="match">Мэтчи</button></a></span></strong></td>
+<td style="width: 33%;  text-align: center; "><strong><span style="font-size: 15pt;"><a href="balance.htm"><button id="payment">Тариф</button></a></span></strong></td>
+ </tbody>
+</table>
+         </div>
+        <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+        <script src="./javaScript/match.js"></script>
+    </body>
+</html>
