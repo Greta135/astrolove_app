@@ -9,7 +9,6 @@ if (!userId) {
 
 console.log("user_id:", userId); // Проверка user_id
 
-
 // Заполнение списка с днями (от 1 до 31)
 const daysSelect = document.getElementById("day");
 for (let i = 1; i <= 31; i++) {
@@ -18,7 +17,6 @@ for (let i = 1; i <= 31; i++) {
     option.textContent = i;
     daysSelect.appendChild(option);
 }
-
 // Заполнение списка с месяцами
 const monthsSelect = document.getElementById("month");
 const months = [
@@ -251,6 +249,9 @@ async function uploadPhoto() {
         console.error("Ошибка запроса:", error);
     }
 }
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
