@@ -17,14 +17,15 @@ for (let i = 1; i <= 31; i++) {
     option.textContent = i;
     daysSelect.appendChild(option);
 }
+
 // Заполнение списка с месяцами
 const monthsSelect = document.getElementById("month");
 const months = [
     "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
 ];
-months.forEach((month, index) => {
+months.forEach((month) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = month;
     option.textContent = month;
     monthsSelect.appendChild(option);
 });
@@ -43,9 +44,9 @@ const gapagesSelect = document.getElementById("gapage");
 const gapages = [
     "Категорическое нет", "1-3 года", "4-7 лет", "8-11 лет", "12 и больше", "Не имеет значения"
 ];
-gapages.forEach((gapage, index) => {
+gapages.forEach((gapage) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = gapage;
     option.textContent = gapage;
     gapagesSelect.appendChild(option);
 });
@@ -55,9 +56,9 @@ const agegapsSelect = document.getElementById("agegap");
 const agegaps = [
     "Категорическое нет", "1-3 года", "4-7 лет", "8-11 лет", "12 и больше", "Не имеет значения"
 ];
-agegaps.forEach((agegap, index) => {
+agegaps.forEach((agegap) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = agegap;
     option.textContent = agegap;
     agegapsSelect.appendChild(option);
 });
@@ -66,9 +67,9 @@ const statussSelect = document.getElementById("status");
 const statuss = [
     "В активном поиске", "Свободна/Свободен", "В отношениях", "Замужем/Женат", "Развод/В разводе"
 ];
-statuss.forEach((status, index) => {
+statuss.forEach((status) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = status;
     option.textContent = status;
     statussSelect.appendChild(option);
 });
@@ -78,9 +79,9 @@ const distancesSelect = document.getElementById("distance");
 const distances = [
     "Да", "Нет ", "Не уверен(а)"
 ];
-distances.forEach((distance, index) => {
+distances.forEach((distance) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = distance
     option.textContent = distance;
     distancesSelect.appendChild(option);
 });
@@ -90,9 +91,10 @@ const sexsSelect = document.getElementById("sex");
 const sexs = [
     "Мужской", "Женский"
 ];
-sexs.forEach((sex, index) => {
+
+sexs.forEach((sex) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = sex;
     option.textContent = sex;
     sexsSelect.appendChild(option);
 });
@@ -101,20 +103,20 @@ const orientationsSelect = document.getElementById("orientation");
 const orientations = [
     "Гетеросексуал", "Бисексуал", "Гей", "Лесбиянка"
 ];
-orientations.forEach((orientation, index) => {
+orientations.forEach((orientation) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = orientation;
     option.textContent = orientation;
     orientationsSelect.appendChild(option);
 });
 // Заполнение списка с целью поисков
 const searchingsSelect = document.getElementById("searching");
 const searchings = [
-    "Найти друга (дружеские отношения)//Найти подругу (дружеские отношения)", "Найти бизнес-партнера//коллегу ", "Найти человека для путешествий", "Построить отношения ", "Найти мужа//Найти жену", "Найти парня//Найти девушку", "Подыскать полового партнера без обязательств (вам должно быть больше 18+)"
+    "Найти друга//Найти подругу (дружеские отношения)", "Найти бизнес-партнера//коллегу ", "Найти человека для путешествий", "Построить отношения ", "Найти мужа//Найти жену", "Найти парня//Найти девушку", "Подыскать полового партнера без обязательств (вам должно быть больше 18+)"
 ];
-searchings.forEach((searching, index) => {
+searchings.forEach((searching) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = searching;
     option.textContent = searching;
     searchingsSelect.appendChild(option);
 });
@@ -123,9 +125,9 @@ const signsSelect = document.getElementById("sign");
 const signs = [
     "Овен", "Телец", "Близнецы", "Рак ", "Лев", "Дева", "Весы", "Скорпион", "Стрелец", "Козерог ", "Водолей", "Рыбы"
 ];
-signs.forEach((sign, index) => {
+signs.forEach((sign) => {
     const option = document.createElement("option");
-    option.value = index + 1;
+    option.value = sign;
     option.textContent = sign;
     signsSelect.appendChild(option);
 });
@@ -171,25 +173,13 @@ document.getElementById("return1").addEventListener("click",
         document.getElementById("return").style.display = "block";
         document.getElementById("return1").style.display = "none";
     });
- // Выбор что хотим предложить
-var s = document.forms.Form2;
-s.onchange = function () {
-  var t = s.querySelectorAll('[type="checkbox"]'),
-      g = s.querySelectorAll('[type="checkbox"]:checked');
-  for (var m=0; m<t.length; m++)
-    if (g.length >= 5) { // если отметить пять и более галочки
-      t[m].disabled = true; // все чекбоксы становятся disabled
-      for(var e=0; e<g.length; e++)
-        g[e].disabled = false; // но disabled убирается с помеченных галочками чекбоксов
-    } else {
-      t[m].disabled = false; // если выделить менее пяти галочек, то disabled снимается со всех чекбоксов
-    }
-}
 
-var f = document.forms.Form1;
-f.onchange = function () {
-  var n = f.querySelectorAll('[type="checkbox"]'),
-      l = f.querySelectorAll('[type="checkbox"]:checked');
+ // Выбор что могу предложить
+// var f = document.forms.Form1;
+var give = document.querySelector(".give");
+give.onchange = function () {
+  var n = give.querySelectorAll('[type="checkbox"]'),
+      l = give.querySelectorAll('[type="checkbox"]:checked');
   for (var j=0; j<n.length; j++)
     if (l.length >= 5) { // если отметить пять и более галочки
       n[j].disabled = true; // все чекбоксы становятся disabled
@@ -199,6 +189,22 @@ f.onchange = function () {
       n[j].disabled = false; // если выделить менее пяти галочек, то disabled снимается со всех чекбоксов
     }
 }
+
+ // Выбор что хочу получить
+//  var s = document.forms.Form2;
+var get = document.querySelector(".get");
+ get.onchange = function () {
+   var t = get.querySelectorAll('[type="checkbox"]'),
+       g = get.querySelectorAll('[type="checkbox"]:checked');
+   for (var m=0; m<t.length; m++)
+     if (g.length >= 5) { // если отметить пять и более галочки
+       t[m].disabled = true; // все чекбоксы становятся disabled
+       for(var e=0; e<g.length; e++)
+         g[e].disabled = false; // но disabled убирается с помеченных галочками чекбоксов
+     } else {
+       t[m].disabled = false; // если выделить менее пяти галочек, то disabled снимается со всех чекбоксов
+     }
+ }
 
 // Функция выбора фото
 document.getElementById("yourphoto").addEventListener("click", () => {
@@ -251,70 +257,67 @@ async function uploadPhoto() {
 }
 
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     document.getElementById("save").addEventListener("click", (event) => {
+//         event.preventDefault();
+//         console.log("Кнопка Save нажата!");
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("save").addEventListener("click", (event) => {
-        event.preventDefault();
-        console.log("Кнопка Save нажата!");
-
-        const name = document.getElementById("name").value;
-        const sex = document.getElementById("sex").value;
-        const social = document.getElementById("social").value;
-        const sign = document.getElementById("sign").value;
-        const month = document.getElementById("month").value;
-        const day = document.getElementById("day").value;
-        const year = document.getElementById("year").value;
-        const birthplace = document.getElementById("birthplace").value;
-        const birthtime = document.getElementById("birthtime").value;
-        const place = document.getElementById("place").value;
-        const orientation = document.getElementById("orientation").value;
-        const searching = document.getElementById("searching").value;
-        const gapage = document.getElementById("gapage").value;
-        const agegap = document.getElementById("agegap").value;
-        const status = document.getElementById("status").value;
-        const distance = document.getElementById("distance").value;
+//         const name = document.getElementById("name").value;
+//         const sex = document.getElementById("sex").value;
+//         const social = document.getElementById("social").value;
+//         const sign = document.getElementById("sign").value;
+//         const month = document.getElementById("month").value;
+//         const day = document.getElementById("day").value;
+//         const year = document.getElementById("year").value;
+//         const birthplace = document.getElementById("birthplace").value;
+//         const birthtime = document.getElementById("birthtime").value;
+//         const place = document.getElementById("place").value;
+//         const orientation = document.getElementById("orientation").value;
+//         const searching = document.getElementById("searching").value;
+//         const gapage = document.getElementById("gapage").value;
+//         const agegap = document.getElementById("agegap").value;
+//         const status = document.getElementById("status").value;
+//         const distance = document.getElementById("distance").value;
         
 
-         if (!name || !sex || !social ||  !sign || !day || !year || !month || !birthplace || !place  || !orientation || !searching || !gapage || !agegap || !status || !distance ) {
-             alert("Заполните все поля!");
-             return;
-         }
+//          if (!name || !sex || !social ||  !sign || !day || !year || !month || !birthplace || !place  || !orientation || !searching || !gapage || !agegap || !status || !distance ) {
+//              alert("Заполните все поля!");
+//              return;
+//          }
 
-        userData = {
-            name: name,
-            sex: sex,
-            day: day,
-            year:year,
-            sign: sign,
-            month: month,
-            social: social,
-            birthplace: birthplace,
-            birthtime: birthtime,
-            place: place,
-            orientation: orientation,
-            searching: searching,
-            gapage: gapage,
-            agegap: agegap,
-            status: status,
-            distance: distance,
+//         userData = {
+//             name: name,
+//             sex: sex,
+//             day: day,
+//             year:year,
+//             sign: sign,
+//             month: month,
+//             social: social,
+//             birthplace: birthplace,
+//             birthtime: birthtime,
+//             place: place,
+//             orientation: orientation,
+//             searching: searching,
+//             gapage: gapage,
+//             agegap: agegap,
+//             status: status,
+//             distance: distance,
             
-            photo_id: userData.photo_id
-        };
+//             photo_id: userData.photo_id
+//         };
 
 
-        console.log("Отправляем данные в бота: ", JSON.stringify(userData));
+//         console.log("Отправляем данные в бота: ", JSON.stringify(userData));
 
-        if (window.Telegram && window.Telegram.WebApp) {
-            Telegram.WebApp.ready();
-            console.log("Telegram WebApp инициализирован!");
+//         if (window.Telegram && window.Telegram.WebApp) {
+//             Telegram.WebApp.ready();
+//             console.log("Telegram WebApp инициализирован!");
 
-            Telegram.WebApp.sendData(JSON.stringify(userData));
-            console.log("Данные отправлены в бота!");
-        } else {
-            console.error("Telegram WebApp API не доступен!");
-            alert("Telegram WebApp API не доступен!");
-        }
-    });
-});
+//             Telegram.WebApp.sendData(JSON.stringify(userData));
+//             console.log("Данные отправлены в бота!");
+//         } else {
+//             console.error("Telegram WebApp API не доступен!");
+//             alert("Telegram WebApp API не доступен!");
+//         }
+//     });
+// });
